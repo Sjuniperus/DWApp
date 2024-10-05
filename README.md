@@ -1,4 +1,4 @@
-# Dinamic web application
+# Dynamic web application
 Web application to practice php 
 
 WIP
