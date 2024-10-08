@@ -9,12 +9,8 @@ $heading = "Note";
 
 $note = $db->query('SELECT * FROM notes WHERE id = :id', [
     'id' => $_GET['id']
-])->fetch();
+])->findOrFail();
 
-//note not found
-if (!$note){
-    abort();
-}
 
 //not authorized, 
 $currentUserId = 1;
