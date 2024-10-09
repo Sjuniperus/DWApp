@@ -1,23 +1,19 @@
 <?php
 
-require "Validator.php";
+$config = require base_path("config.php");
 
-$config = require "config.php";
 $db = new Database($config['database']);
 
-$heading = "Create note";
+$errors = [];
 
 /*if (!Validator::email('pepa@mail.com')) {
 dd ('that's not a valid email)};*/
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $errors = [];
 
     if (! Validator::string($_POST['body'], 1, 1000)){
         $errors['body'] = 'A body of max 1,000 characters is required';
     }
-
-    
 
     if (empty($errors)) {
 
@@ -29,4 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 
-require "views/notes/create.view.php";
+view("notes/create.view.php", [
+    'heading' => 'Create note',
+    'errors' => $errors
+]);
