@@ -1,12 +1,18 @@
 <?php
 
+$router->get('/', 'controllers/index.php');
+$router->get('/about', 'controllers/about.php');
+$router->get('/contact', 'controllers/contact.php');
+$router->get('/our_mission', 'controllers/our_mission.php');
 
-return [
-    '/'=> 'controllers/index.php',
-    '/about'=> 'controllers/about.php',
-    '/notes'=> 'controllers/notes/index.php',
-    '/note'=> 'controllers/notes/show.php',
-    '/notes/create' =>'controllers/notes/create.php',
-    '/contact'=> 'controllers/contact.php',
-    '/our_mission'=> 'controllers/our_mission.php'   
-];
+$router->get('/notes', 'controllers/notes/index.php');
+$router->get('/note', 'controllers/notes/show.php');
+$router->delete('/note', 'controllers/notes/destroy.php');
+
+$router->get('/notes/create', 'controllers/notes/create.php');
+$router->post('/notes', 'controllers/notes/store.php');
+
+
+
+
+//dd($router->routes);
