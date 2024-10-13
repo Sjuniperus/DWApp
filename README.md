@@ -12,4 +12,4 @@ WIP
 
 ## Install
 
-Comming next
+Comming soon
