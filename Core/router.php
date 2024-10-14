@@ -4,7 +4,7 @@ namespace Core;
 
 class Router {
 
-    public $routes = [];
+    protected $routes = [];
 
     public function add($method, $uri, $controller){
         $this->routes[] = [
