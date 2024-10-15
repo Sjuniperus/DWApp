@@ -1,5 +1,6 @@
 <?php
 
+$_SESSION['name'] = 'Pepa';
 
 $heading = "Home";
 
