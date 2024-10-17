@@ -10,6 +10,11 @@ require BASE_PATH . 'Core/functions.php';
 //function call automatically class
 spl_autoload_register(function($class){
     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+    $path = base_path("{$class}.php");
+    if (!file_exists($path)) {
+        echo "No se encuentra el archivo: $path";
+        exit;
+    }
     require base_path("{$class}.php");
 });
 
